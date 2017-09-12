@@ -19,7 +19,7 @@ void basic_dgemm(const int lda, const int M, const int N, const int K,
         for (j = 0; j < N; ++j) {
             double cij = C[j*lda+i];
             for (k = 0; k < K; ++k) {
-                cij += A[k*lda+i] * B[j*lda+k];
+                cij += A[k*lda+i] * B[j*K+k];
             }
             C[j*lda+i] = cij;
         }
